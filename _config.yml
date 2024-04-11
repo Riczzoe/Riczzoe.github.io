@@ -24,8 +24,11 @@ description: >- # this means to ignore newlines until "baseurl:"
   nothing...
 
 # Build settings
-remote_theme: no-style-please
+{% if jekyll.environment == 'development' %}
 theme: no-style-please
+{% else %}
+remote_theme: no-style-please
+{% endif %}
 
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
