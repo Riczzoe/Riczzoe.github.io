@@ -1,1 +1,8 @@
-<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+{% assign parts = page.url | split: '/' %}
+{% if parts.last != "index.html" %}
+  {% assign back_url = parts | slice: 0, 2 | join: '/' %}
+{% else %}
+  {% assign back_url = '/' %}
+{% endif %}
+<a href="{{ back_url | relative_url }}">{{ site.theme_config.back_home_text }}</a>
+
