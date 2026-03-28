@@ -1,0 +1,31 @@
+back_to_top: トップへ戻る
+
+clipboard_copy: コードをコピー
+clipboard_copied: コピーしました
+
+empty: まだ何もありません。
+
+gallery_visit_source: 元のリンクを見る
+gallery_view_image: 画像を見る
+
+index:
+  read_more: 続きを読む
+
+nav:
+  archives: アーカイブ
+  categories: カテゴリー
+  menu: メニュー
+  tags: タグ
+
+page:
+  next: 次へ
+  pagination: ページネーション
+  prev: 前へ
+
+theme:
+  dark: ダーク
+  light: ライト
+  system: システム
+
+toc:
+  title: 目次

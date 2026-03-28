@@ -1,0 +1,30 @@
+{% from "_macro/ui.njk" import meta with context %}
+<article class="content-article">
+    <header class="text-center mb-4">
+        <h2 class="card-title">
+            <a href="{{ url_for(post.path) }}">{{ post.title }}</a>
+        </h2>
+        {{ meta(post) }}
+    </header>
+    {% if post.excerpt %}
+        {% set show_excerpt = true %}
+        {% set excerpt_content = post.excerpt %}
+    {% elif theme.excerpt.fallback.enabled and (post.content | striptags | length) > theme.excerpt.fallback.length %}
+        {% set show_excerpt = true %}
+        {% set excerpt_content = '<p>' + (post.content | striptags | truncate(theme.excerpt.fallback.length)) + '</p>' %}
+    {% else %}
+        {% set show_excerpt = false %}
+        {% set excerpt_content = post.content %}
+    {% endif %}
+    <div class="prose-shiro">
+        {{ excerpt_content | safe }}
+    </div>
+    {% if show_excerpt %}
+    <div class="mt-6 text-center">
+        <a href="{{ url_for(post.path) }}"
+            class="focus-elegant btn-ink">
+            {{ __('index.read_more') }}
+        </a>
+    </div>
+    {% endif %}
+</article>

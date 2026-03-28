@@ -1,0 +1,31 @@
+back_to_top: Retour en haut
+
+clipboard_copy: Copier le code
+clipboard_copied: Copié
+
+empty: Rien ici pour le moment.
+
+gallery_visit_source: Voir le lien source
+gallery_view_image: Voir l'image
+
+index:
+  read_more: Lire la suite
+
+nav:
+  archives: Archives
+  categories: Catégories
+  menu: Menu
+  tags: Tags
+
+page:
+  next: Suivant
+  pagination: Pagination
+  prev: Précédent
+
+theme:
+  dark: Sombre
+  light: Clair
+  system: Système
+
+toc:
+  title: Sommaire

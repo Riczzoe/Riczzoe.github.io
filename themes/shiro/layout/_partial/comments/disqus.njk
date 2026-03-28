@@ -1,0 +1,34 @@
+{% if theme.comments.enabled and theme.comments.provider == "disqus" and theme.comments.disqus.shortname %}
+<div id="disqus_thread" class="mt-10"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = {{ (page.permalink or url) | dump | safe }};
+        this.page.identifier = {{ url_for(page.path) | dump | safe }}.replace(/\/$/, '');
+    };
+
+    (function() {
+        const d = document, s = d.createElement('script');
+        {# shortname must be alphanumeric (Disqus requirement) — do not use user-supplied input #}
+        s.src = 'https://' + {{ theme.comments.disqus.shortname | dump | safe }} + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', Date.now());
+        
+        const disqus_thread = d.getElementById('disqus_thread');
+        if (!disqus_thread) return;
+
+        if (!('IntersectionObserver' in window)) {
+            (d.head || d.body).appendChild(s);
+            return;
+        }
+
+        const observer = new IntersectionObserver(function(entries) {
+            /* threshold 0 = load as soon as the container enters the viewport */
+            if (entries[0].isIntersecting) {
+                (d.head || d.body).appendChild(s);
+                observer.disconnect();
+            }
+        }, { threshold: 0 });
+        observer.observe(disqus_thread);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
