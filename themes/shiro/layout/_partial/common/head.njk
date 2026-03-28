@@ -72,6 +72,7 @@
     <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ url_for(theme.site.rss.path | default('/atom.xml')) }}" />
     {% endif %}
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
     <!-- CSS -->
     {% if is_home() or is_post() or is_page() %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/css/lightgallery.min.css" integrity="sha384-YlypU+LX5577RgeZebpBZTy28roXf0lHGaOSxrroczh16ktxM0BoAMPXsrehqxx8" crossorigin="anonymous" />

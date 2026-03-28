@@ -98,6 +98,10 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: shiro
 
+markdown_it_plus:
+  html: true
+  breaks: true
+  linkify: true
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

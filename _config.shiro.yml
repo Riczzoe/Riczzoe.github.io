@@ -6,7 +6,7 @@ site:
   # Whether to display the seal (stamp) in the header
   seal: true
   # Text displayed inside the seal stamp and favicon (single character recommended)
-  seal_text: "白"
+  seal_text: "myth"
   rss:
     enabled: false
     path: /atom.xml
