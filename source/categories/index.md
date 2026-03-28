@@ -1,4 +1,5 @@
 ---
-title: categories
-date: 2026-03-28 15:51:08
+title: Categories
+type: categories
+layout: categories
 ---
