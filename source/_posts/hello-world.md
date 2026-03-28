@@ -1,7 +1,6 @@
 ---
 title: Hello World
 categories:
-  - 技术
   - Hexo
 tags:
   - 博客
